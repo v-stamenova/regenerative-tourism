@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-link {
+  position: relative;
+  display: inline-block;
+  color: #ffffff; /* Tailwind text-gray-300 */
+  text-decoration: none; /* Removes default underline */
+  overflow: hidden; /* Ensures the pseudo-element doesn't exceed the link's dimensions */
+}
+
+.custom-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: white; /* Color of the underline */
+  transition: all 0.3s ease; /* Smooth transition for the animation */
+  transform: translateX(-50%);
+}
+
+.custom-link:hover::after {
+  width: 100%;
+  left: 0;
+  transform: translateX(0%);
+}
+
+.custom-link:hover {
+  color: white; /* Tailwind text-white */
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Applies to all scrollable elements */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #1d263bb2; /* Color of the scroll thumb */
+  border-radius: 4px; /* Rounded corners of the scroll thumb */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1d263bcc; /* Color of the scrollbar track */
+}

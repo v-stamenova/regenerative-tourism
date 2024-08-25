@@ -37,6 +37,12 @@ html {
   scroll-behavior: smooth;
 }
 
+.download-link {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
 /* Applies to all scrollable elements */
 ::-webkit-scrollbar {
   width: 8px; /* Width of the vertical scrollbar */
